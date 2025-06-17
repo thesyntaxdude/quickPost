@@ -7,16 +7,26 @@
   <title>QuickPost - Login | Register</title>
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/signin.css">
+  <script src="https://kit.fontawesome.com/7b2c76b823.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
   <main>
-    <h1>QuickPost</h1>
-    <p class="tag-line">A minimalist microblogging platform.</p>
-    <button id="signup-btn">Sign Up</button>
-    <button id="login-btn">Log In</button>
-    <p class="signin-copy">Sign in to create posts</p>
-    <button id="google-signin">Continue with Google</button>
+    <section id="upper">
+      <h1>QuickPost</h1>
+      <p class="tagline">A minimalist microblogging platform.</p>
+      <div class="button-container">
+        <button id="signup-btn">Sign Up</button>
+        <button id="login-btn">Log In</button>
+      </div>
+    </section>
+    <section id="bottom">
+      <p class="signin-copy">Sign in to create posts</p>
+      <div class="google-container">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo" width="20" height="20" />
+        <button id="google-signin">Continue with Google</button>
+      </div>
+    </section>
   </main>
 </body>
 
