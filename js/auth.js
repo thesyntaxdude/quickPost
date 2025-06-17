@@ -3,6 +3,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendEmailVerification,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 import {
   getFirestore,
@@ -31,8 +33,10 @@ const db = getFirestore(app);
 const signupSubmitBtn = document.querySelector("#popup-signup-btn");
 const loginSubmitBtn = document.querySelector("#popup-login-btn");
 
+console.log(signupSubmitBtn);
 // SIGN UP PROCESS
 signupSubmitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
   // input fields
   const username = document.querySelector("#username").value;
   const email = document.querySelector("#signup-email").value;
@@ -41,6 +45,7 @@ signupSubmitBtn.addEventListener("click", function (e) {
   createUserWithEmailAndPassword(auth, email, password, username).then(
     (userCredential) => {
       const user = userCredential.user;
+      sendEmailVerification(user);
       setDoc(doc(db, "users", user.uid), {
         email: user.email,
         uid: user.uid,
@@ -69,6 +74,7 @@ signupSubmitBtn.addEventListener("click", function (e) {
 // LOGIN PROCESS
 
 loginSubmitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
   const email = document.querySelector("#login-email").value;
   const password = document.querySelector("#login-password").value;
 
@@ -82,12 +88,24 @@ loginSubmitBtn.addEventListener("click", function (e) {
       }
 
       showMsg("Login successful!", ".msgbox");
-      window.href="/pages/register.html"
+      window.location.href = "/pages/register.html";
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       showMsg(`Login failed: ${errorMessage}`, ".msgbox");
+    });
+});
+
+// SIGN OUT PROCESS
+const signOutBtn = document.querySelector("#sign-out");
+signOutBtn.addEventListener("click", (e) => {
+  signOut(auth)
+    .then(() => {
+      window.location.href = "../index.html";
+    })
+    .catch((error) => {
+      // An error happened.
     });
 });
 
@@ -102,7 +120,6 @@ function showMsg(message, msgbox) {
 
     setTimeout(() => {
       destination.style.display = "none";
-    }, 3500); 
+    }, 3500);
   }, 5000);
 }
-
