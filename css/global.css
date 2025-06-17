@@ -27,7 +27,7 @@ img {
 }
 
 body {
-  font-family: var(--primary-font);
+  font-family: var(--primary-font), sans-serif, system-ui;
   font-weight: var(--body-font-weight);
   height: 100dvh;
   overflow: hidden;
@@ -148,11 +148,11 @@ button {
     font-size: 2.5rem;
   }
 
-  .tagline{
+  .tagline {
     font-size: 1rem;
   }
 
-  #bottom p{
+  #bottom p {
     font-size: 1rem;
   }
 }
@@ -170,19 +170,20 @@ button {
   #bottom p {
     font-size: 1.2rem;
   }
-  button{
+
+  button {
     font-size: 1rem;
   }
 }
 
 
-#signup-form{
+#signup-form {
   display: none;
 }
-#signup-form.active{
+
+#signup-form.active {
   background-color: var(--google-button-accent);
   position: absolute;
-  z-index: 1;
   height: 60%;
   width: 90%;
   max-width: 500px;
@@ -191,7 +192,7 @@ button {
   align-items: center;
 }
 
-#signup-form form{
+#signup-form form {
   display: flex;
   padding: 10%;
   flex-direction: column;
@@ -203,20 +204,24 @@ button {
   background-color: var(--accent-color);
 }
 
-#signup-form form h2{
+#signup-form form h2 {
   text-align: center;
 }
 
-#signup-form form input{
+#signup-form form input {
   padding: 0.8em 1em;
+  border-radius: var(--border-radius);
 }
-.popup-login{
+
+.popup-login {
   margin-top: 1em;
 }
-.popup-btn{
+
+.popup-btn {
   margin-left: 0.5em;
   text-decoration: underline;
   color: var(--primary-color);
+  cursor: pointer;
 }
 
 #login-form {
@@ -226,7 +231,6 @@ button {
 #login-form.active {
   background-color: var(--google-button-accent);
   position: absolute;
-  z-index: 2;
   height: 60%;
   width: 90%;
   max-width: 500px;
@@ -253,14 +257,23 @@ button {
 
 #login-form form input {
   padding: 0.8em 1em;
+  border-radius: var(--border-radius);
 }
 
-#popup-login-btn{
+#popup-login-btn,
+#popup-signup-btn {
   background-color: var(--primary-color);
   color: var(--google-button-accent);
   font-weight: var(--button-font-weight);
   font-size: 1rem;
+  cursor: pointer;
+  animation: 0.3s smooth;
+
+  &:hover{
+    transform: scaleX(0.9);
+  }
 }
+
 .popup-register {
   margin-top: 1em;
 }
