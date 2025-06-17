@@ -3,6 +3,8 @@ const signupBtn = document.querySelector("#signup-btn");
 const loginBtn = document.querySelector("#login-btn");
 const alreadySignedUp = document.querySelector(".login");
 const noAccountYet = document.querySelector(".signup");
+const closeBtnLogin = document.querySelector(".close-signin");
+const closeBtnSignup = document.querySelector(".close-signup");
 
 signupBtn.addEventListener("click", () => {
   const signupForm = document.querySelector("#signup-form");
@@ -23,4 +25,12 @@ noAccountYet.addEventListener("click", () => {
   const loginForm = document.querySelector("#login-form");
   signupForm.classList.toggle("active");
   loginForm.classList.remove("active");
+});
+closeBtnLogin.addEventListener("click", () => {
+  const loginForm = document.querySelector("#login-form");
+  loginForm.classList.remove("active");
+});
+closeBtnSignup.addEventListener("click", () => {
+  const signupForm = document.querySelector("#signup-form");
+  signupForm.classList.remove("active");
 });

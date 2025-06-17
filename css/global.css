@@ -184,7 +184,7 @@ button {
 #signup-form.active {
   background-color: var(--google-button-accent);
   position: absolute;
-  height: 60%;
+  height: 70%;
   width: 90%;
   max-width: 500px;
   display: flex;
@@ -213,7 +213,8 @@ button {
   border-radius: var(--border-radius);
 }
 
-.popup-login {
+.popup-login,
+.popup-register {
   margin-top: 1em;
 }
 
@@ -269,11 +270,16 @@ button {
   cursor: pointer;
   animation: 0.3s smooth;
 
-  &:hover{
+  &:hover {
     transform: scaleX(0.9);
   }
 }
 
-.popup-register {
-  margin-top: 1em;
+.close {
+  margin-top: 1.5em;
+  text-transform: uppercase;
+
+  &:hover {
+    transform: scaleX(0.8);
+  }
 }
