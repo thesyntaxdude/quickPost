@@ -76,7 +76,7 @@ main {
 }
 
 button {
-  padding: 0.8em 1.5em;
+  padding: 1em 1.8em;
   min-width: 9em;
   border-radius: var(--border-radius);
   font-weight: var(--button-font-weight);
@@ -85,7 +85,7 @@ button {
 
 #signup-btn {
   margin-top: 2em;
-  margin-bottom: 0.8em;
+  margin-bottom: 1.2em;
   border: 1px solid transparent;
   background-color: var(--primary-color);
   color: var(--google-button-accent);
