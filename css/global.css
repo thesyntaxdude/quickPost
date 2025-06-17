@@ -1,0 +1,21 @@
+*, ::before, ::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img{
+  max-width: 100%;
+  aspect-ratio: 16/9;
+}
+:root{
+  --primary-color: #2563EB;
+  --secondary-color: #111827;
+  --accent-color: #F9FAFB;
+  --border-outline-color: #D1D5DB;
+  --google-button-accent: #fff;
+  --primary-font: Inter;
+  --heading-font-weight: 700;
+  --body-font-weight: 400;
+  --button-font-weight: 600;
+  --border-radius: 0.5rem;
+}
