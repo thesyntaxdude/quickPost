@@ -232,7 +232,7 @@ button {
 #login-form.active {
   background-color: var(--google-button-accent);
   position: absolute;
-  height: 60%;
+  height: 70%;
   width: 90%;
   max-width: 500px;
   display: flex;
