@@ -31,11 +31,27 @@
     <!-- Sign Up Form Popup -->
     <section id="signup-form">
       <form action="#" method="get">
-        <input type="text" id="username" placeholder="username" required>
+        <h2>Let's Get You Signed Up!</h2>
+        <input type="text" id="username" placeholder="username" minlength="4">
         <input type="email" id="email" placeholder="validaddress@email.com" required>
-        <input type="password" id="password" placeholder="password" required>
+        <input type="password" id="password" placeholder="password" minlength="8">
         <input type="submit" id="signup-btn" value="Sign Up">
       </form>
+      <div class="popup-login">
+        <p>Already have an account?<span class="popup-btn">Login</span></p>
+      </div>
+    </section>
+    <!-- Login Form Popup -->
+    <section id="login-form">
+      <form action="#" method="get">
+        <h2>Welcome Back!</h2>
+        <input type="text" id="username" placeholder="username" minlength="4">
+        <input type="password" id="password" placeholder="password" minlength="8">
+        <input type="submit" id="popup-login-btn" value="Login">
+      </form>
+      <div class="popup-register">
+        <p>Don't have an account?<span class="popup-btn">Sign Up</span></p>
+      </div>
     </section>
   </main>
 </body>
