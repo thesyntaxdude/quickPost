@@ -1,6 +1,9 @@
 # 📬 QuickPost
 
-A minimalist microblogging app built with **Vanilla JavaScript**, **HTML**, and **CSS**, powered by **Firebase** for authentication and real-time post storage. Users can sign in, create short posts, and view a global feed — all from a clean, responsive UI.
+A minimalist microblogging app built with **Vanilla JavaScript**, **HTML**, and
+**CSS**, powered by **Firebase** for authentication and real-time post storage.
+Users can sign in, create short posts, and view a global feed — all from a
+clean, responsive UI.
 
 ![QuickPost screenshot](./assets/screenshot.png)
 
@@ -23,24 +26,27 @@ A minimalist microblogging app built with **Vanilla JavaScript**, **HTML**, and 
 - **Firebase**:
   - Authentication
   - Firestore
-  - Hosting
 
 ---
 
 ## ⚙️ Getting Started
-1. Clone the repo 
-> git clone https://github.com/yourusername/quickpost.git
+
+1. Clone the repo
+   > git clone https://github.com/thesyntaxdude/quickpost.git
 2. Add your FIrebase config
 3. Open index.html in your browser
 4. Done!
 
 ## 🌍 Live Demo
-> Live Link => [QuickPost](#)
+
+> Live Link => [QuickPost](https://thesyntaxdude.github.io/quickPost/)
 
 ## License
-This project is licensed under the MIT License. 
+
+This project is licensed under the MIT License.
 
 ## 👤 Author
+
 - [Twitter](https://twitter.com/thesyntaxdude)
 - [LinkedIn](https://linkedin.com/in/princeakakpo)
 - [Blog post about this project] (to be added later)
