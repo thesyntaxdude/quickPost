@@ -4,7 +4,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
-  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 import {
   getFirestore,
@@ -29,6 +30,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
 
 const signupSubmitBtn = document.querySelector("#popup-signup-btn");
 const loginSubmitBtn = document.querySelector("#popup-login-btn");
@@ -85,6 +87,28 @@ loginSubmitBtn.addEventListener("click", function (e) {
       }
 
       showMsg("Login successful!", ".msgbox");
+      // GITHUB PAGES? USE THIS
+      // window.location.href = "/quickpost/pages/dashboard.html";
+      // LIVE SERVER? USE THIS
+      window.location.href = "../pages/dashboard.html";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      showMsg(`Login failed: ${errorMessage}`, ".msgbox");
+    });
+});
+
+// Google Sign In
+const googleSignInBtn = document.querySelector(".google-container");
+googleSignInBtn.addEventListener("click", () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      showMsg("Login successful!.", ".msgbox");
+      // GITHUB PAGES? USE THIS
       window.location.href = "/quickpost/pages/dashboard.html";
       // LIVE SERVER? USE THIS
       // window.location.href = "../pages/dashboard.html";
@@ -92,6 +116,8 @@ loginSubmitBtn.addEventListener("click", function (e) {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
       showMsg(`Login failed: ${errorMessage}`, ".msgbox");
     });
 });
