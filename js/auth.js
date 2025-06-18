@@ -85,7 +85,7 @@ loginSubmitBtn.addEventListener("click", function (e) {
       }
 
       showMsg("Login successful!", ".msgbox");
-      window.location.href = "/pages/dashboard.html";
+      window.location.href = "../pages/dashboard.html";
     })
     .catch((error) => {
       const errorCode = error.code;
