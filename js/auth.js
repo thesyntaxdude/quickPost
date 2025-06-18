@@ -32,8 +32,6 @@ const db = getFirestore(app);
 
 const signupSubmitBtn = document.querySelector("#popup-signup-btn");
 const loginSubmitBtn = document.querySelector("#popup-login-btn");
-
-console.log(signupSubmitBtn);
 // SIGN UP PROCESS
 signupSubmitBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -65,7 +63,6 @@ signupSubmitBtn.addEventListener("click", function (e) {
           const errorCode = error.code;
           const errorMessage = error.message;
           showMsg(`Sign Up failed: ${errorMessage}`, ".msgbox");
-          // ..
         });
     }
   );
@@ -88,24 +85,12 @@ loginSubmitBtn.addEventListener("click", function (e) {
       }
 
       showMsg("Login successful!", ".msgbox");
-      window.location.href = "/pages/register.html";
+      window.location.href = "/pages/dashboard.html";
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       showMsg(`Login failed: ${errorMessage}`, ".msgbox");
-    });
-});
-
-// SIGN OUT PROCESS
-const signOutBtn = document.querySelector("#sign-out");
-signOutBtn.addEventListener("click", (e) => {
-  signOut(auth)
-    .then(() => {
-      window.location.href = "../index.html";
-    })
-    .catch((error) => {
-      // An error happened.
     });
 });
 
